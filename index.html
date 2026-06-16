@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="LinkTrip">
+<meta name="theme-color" content="#0E7C6B">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAXTklEQVR4nO2deZxU1ZXHz7n31V7V3UIvQLMoLQIuKGBAWQQxxiWTRIgazag0HYw6+jEm84k6mXHGzJjkk2AWEsEkKo1b1BiNRokR0YgogiIiKi7sskPTW+1V754zf9zutoV6TUM3Vd2P+/28jx8sqh7v1fvVOeeec+69WPzz28BgyIUo9AUYei5GHAZHjDgMjljAXOhrMPRQjOUwOGLEYXDEAuNVDA5YYNRhcMC4FYMjxq0YHDGWw+CIiTkMjhjLYXDExBwGR4xbMThi3IrBEeNWDI4Yy2FwxMQcBkeMWzE4YtyKwREjDoMjJuYwOGJiDoMjxq0YHLGM4TA4YaYmGBwxbsXgiBGHwRHjVgyOGMthcMSIw+CIEYfBERNzGBwxlsPgiBGHwRFTeDM4Ykr2BkeMWzE4YtyKwRFjOQyOmJjD4IixHAZHTMxhcMS4FYMjxq0YHDFuxeCIsRwGR0zMYXDEuBWDI1ahL6BgMAACCBSIAIDM3PoaI6J+hZgZGAt9qYXi2JzxxgKFRMySiqWTpBQwC+vz3wkpGwBQyIDH67MsBlbUJp1jiGMs5mAQAhFEPJPOZjNFwfCEIVWn9Ksc2rds7MAhHil1z+SHe3Zs2r/v/V3bP9i9Y2dDPUpR5A8gCEV0TMnj2Io5LCHjmXQmmzlz8NB/HXPWBSNOG1nR/+C3Takarv+wo6nx5fUfPrnm7Rc+/oCYSgJBxczHTNctRv7jhkJfQz4QiADYFI+Oqhz87+deeMXo8V5pAQADENEBDoNbP6LjEQB4ef26u1/9xz/WrQ35Ax4pFVHe76AAHAPiYJZCpG07o+ybJ3/5zgunF/n8AGATtX/8Dh9lYsbWt927/J93vPB0QyJRHAjYSkGHn3UBGLn9+kJfw9FFCpHIpPsEQvMuvWbGqLEAYBNZ4vCyf4oIEQSK93Zuu/aJBW9/trlPKJxV6uhcck/B5RlSrYzjAqFF3/3BjFFjs0ox8+EqQ59HoLCVOn3AoJduuHXi0JPq41FLyKNxzT0HN4tDIGZsuyQQfOG6H4wZOCSrlEdK7IIvsKRURMX+wPOzb5lwwknNqYQ8fJ31Itw74w0BANPZzGNXXz+6skUZXT+rFEIRlQSCf7r6+vG//nE0lbKkdOv4xbXCt1A2xaK3TLng66eO7qQymDs1TpVC2KSGHNf395dVJzLpjkPaXo07xSEQ45nUqZWD77zwEsWHCD+J2dajWQ2AIlLc0WDVEtImdclpY64ZN6kxEXdr8OFGcTAgYCaT+dH5Xwv7/MzcQZyhmASiJQQCNKaSDamEYpJCSBS6sOL0QQHIAP/9lW9EfP6ssl1pPVwYcwjEeDp55pCqGaPOJGaJuX8ADMDMEsVHdXseXvv28u2btzTWE0BFMDym/6DLTz7jvBNOAgBizuk4hBCKqKq0/KozJ9677KWSUNh9mTEXVmUFimw2c824iT7LsknltPkMAMwC8WdvLPn58iVNyaTXsnTOdF88tmr3tgVrVnz71LFzL5hR4g846UOfZ/bZ5zyw4lVy3W8M3OhWMKvs4lDkwhGjAEA4FMqICRC+9+LTP3rpGQQsDUXCXp9HSI+QQY+nNBAq8QceWrPiG3++vyGZQICccaoex57af+CoAYMSmYxwMFG9FwG6Fu2WQyAkMplR/QedWFrOzCJXKKqYJIo5y//52zdfKS8qQUCblI4wGFjHpzZRRaTktS3ra557jJ0r14qUV1rThp1sZ9ICsOC3381fZuEvoVsPAUjKPm3AQETMaep1FPLp/r0/eX1xSSiSJXKKOtPKLgsVPfPx2ic+XC0QOwgpTq8cjAIZqOC3391fpvtgOrG0AgByPnWtmIfeX9WcSlpCdJzXIGaPZd23ZqXTkAcBAaCqtFxKj/vCDrf1cxCRkJ5RAwZD65M7AIloEy37bJPX8tCh7p2AA5bnw327dkabKotKDo5M9f9WlZZXhIvqEzGPtNyULXWf5WAA8Fq5s1LaAMQz6a1N9V4pO0hjtL3fEqIhmdjYUAcOpggAPEIKRHDZ78yNbYIIwNRhfrOlS6PTZ2Rg6vBbIv2ulv+65/t0neVgAACnxBciMkDA4y0PhrNEndEHMYc9vv6hInBuLxaIqIcq7sJ9Q1nkrP3hrh3gFJAS+SxrXOWQtJ09ZM1MoEjZdlWf0qo+pQxwcCZDRxhb9u/bF4taQrIe+rjlcNtQVmtiQ90exweOAABXnjK6M60YlsBUNn3ZyDMskbtvlAG0OJKZlGwJO9xzuM2tMDAI+cHObZDrhw4AEoVinjy46upRX6qLNfukYwHBI2RDMnlqReUNYycSsxQ5zIw2Tmt3bgOlutJG1DOxXDTyAgBQxAGP970dn+2JNlVEinPmJwQAMf/q/Es2NtS9tmV9WbiIiKjdGFTXaRuSydJg6OFvXFXk8xNzzoGxQEHMyzZ8LKSHXDdpwXWWg9lnWbvq97/yyToAyNmWoeVS4g/87fLZXx8+al882pxJK2aBKBEBIJnN7o1Fh5eW//3K687oV6nL+gefh4gQcfP+fW9u3hDweV1ZlXWX2gEYWAjx6Ko3rjzzbKeQUyASc7E/8Oy3Zj/8/tu1a1auq9tTn0wwc8TrG1FWMWP4qO+NnxLx+nQhJudJCMAC+PPqFbFErCRcZJPbmtEx/P2aQl9D9yMQ4+nUq9+/Y1LVcEXkFHsyM2BLInVbc+Pmxv3E3C8UGda3XJuQjor1zAzQlEyM+sntdfGoy3KjGre5FQ0iMvFdLzwDHRpGRERARcQAg4pKzhlcNXXIiSNKKyTqFx2VAa26uWfpS9v37/NbXvcpA9wqDkUUCQZf/ODd+5e/agnRscGXQiAAMSsmxS2RqRQiZwSqISIpxOsbP/nF4mcjoZD7HIrGfXkOBmBgJqKg33/rU4+s27XdKUvxhS8CUaKQKEQnhqTaSuxqaoglE8iAAMCFvuWjcLgtQ9pyADCzR1rNycTMB+9tTCbkoarzh4UUgpguG3PWwuqbmpMJ3XFY+Lvu7sOdbkWjiCLB0Kqtm742f04qmwXI3e3XeYipzQIJFIpo5lmTa2feEEslOwhdey9uFgcAAzMCDyg+TgrB0NEchUOciFkRCRRSiLamHimErVT1WecsmHlD/HN9dJt9KjgunJrQhkBMZdIDjyudf2WNR8r2nVraAAiRKyX+RYiZmC0hJOLrGz7Z3dx46ZjxbcNjS0qtD2CuefDekD8gHNoTeyMunJrQBiKmMpm5l8/sGwofkO1o+7PdWrhv7xQY9HwmlkLoNTz2RpvnL10856XnE8lE7aybqs8+x1bKkhLa9HH2FACseXC+m/ThWnFYUjZGm2dOPHf6GV9qvyCHDjt+uWTRWScMO3vosJwzJbFdh+FHu3c8tXrlH5a9vH3/vkgwXBQK1zw4HwBy6eMcAHCTPtzpVgSKVDo9uG/ZnG9e1T5UVKSkkPe/8coPH/mjL1J8cv+B04affPqgISf0LR/Rr9KSUn8bG+v2bquvW7N96+sbPl65eUMsmfD7fCXhiK0UAIZ8gZqF8wG4+uwpufTBNQvnh/xBgdDb9eFOy4EIqUz6N9+qLgtH2hwKMQshNtftve2pR8PFfaQU7+/47N0tGwBRSquiqFggMgAC1MWjqUwGlELLE/L5SkJhxWwrBQDMLBBDfn/NQm0/DtbHFACoWegG++FCcXzRoXw+HZKZBMqbn1hYH4+VBMM2qaDXK3x+Bmbm+kS8baDhEdIXDCGiHqTYX0ygUYs+Aq7Xh7vEwSAEpjKZwX3L51yqHUpLSNHiUF5/5fl33yqJFNtKAQIxEykdXnjaTall4I4zqkQsBIb8gZraDvVROz8UCAhEIu6NC5i6LeZAwFQ69ZvZN5eFi3I6lKA/qEgBtGsw1RnVw8xPELX6l9p54KQPhpqF83qv/XBVEsySsikWnTmhxaHIz0cohIA3P15bH496rW6rrX/uX2rnLXxzqdZE25XYSlVPmLJg1o3xDvOn2Ea3XFO34h63IhBTmczg0vI5l13dkUPp1grq5/pYcBj2AwF1R6oiytq2PpUUwpISAYmph5gZ90yHRMRUOv2b2bNyj1D+8kjQH1TU8eykI+EL+mConnCQPibo+GNeyB/Q7QGpbDaaTgGA3+8vDUX0ECmaTjbFYsBseTwhn1/PvOrmaz1MXNIm2DJCmTRt+uhcI5THa+tj0ZJQ+Cg1XlDb+Lb2HgCunjA1lz64pna+x7IymfSQsooLTp48YdjwUwcMHlpWAQAIsLu58aOd25dvWv/SurXvfbZJWlbY5y9sX6ob3MrnDuXSXA5l2cvPr15ZUlRsH80Fh9vHHwCQSx9TGfiuZ56omfqV704+ryxSfMAZSoKhEf0qp48Zn7btJ95+Y+6SRau3booEQ9DlYvIRg+Ebry7IP9yNSCGa4rGnb7p1+uhx7R0KImyp23fmXbenstnu7edwQkcV8VRyQc2N7fUBrepJ27bPsqC18oftEvUMLX2pOqOfVeq//vrYLxc/F/D6CjXY6e2jFbakbIo1z5x47vTR43KMUB5bUB9t9krJHU6t7i6ISSCG/YGaBfMWLn+1/fhFP2CfZSkiZpZC6CWz2wYrAlEKYQnBrauz//zSq+6feX08lSQmRMh/ANC7Yw6BmMqkBpVW5B6hHOhQ8nGnxIQ6/lhwDwBUT5jaNo4ViLrS2/EZEEBLJKtU9cRzAfHahfcGfD4AyPPD6uXbeCGm0pm5351VFjkw5bWpbs+tf3kkEAjZipjzugEXEwuBQX+gZsE8RTRr4lSiltXJOmhaPgAE8EiZVXb1hKm7Ght+9OTDRZEipVQ+b6QX95BaQjZHo9dMmpbbofyptiEa9bZNJ8nntQEQsUThEfJ/nv1zMpNFgUcW8VjSspW6/aJLvjJqbCwelyKvz6u3dp/rLq9BpeV353Io9y1bsmj1iuJwyCa7UFeICJlM+sZzLwj5fHri5BGIA1tTqP/1LzOgpQcgj1/yEVxxTwAR0pn03G/PKosUcatTb3Motz35SCAQLGCSQDehDSqruG7K+eAw37+TSCGIaPKwkReNGpNIxvO5iUevdCstDmXitOmjx+dwKI8uaIhGvdJTwKVUJIp0KnXxaWP6hMKKuro6gx7HXjluEilCzt8ciN5nOQRiOpMZVFpx9+XX5HAory1ZtHplcfhoJUM7iQ4wJp80kqEbyt46mB039MRQMK97h/W+oSwiptLJudfdknOEctuTDwcCrUX5wqFI+fz+UyoH4Rdbl48MBGDggSV9Bvfps2HPLr/Xm5+cWE8svOmMkG7Ears6gaiXq25sbrrh/K9OHzNemwr9ty01lEcfaIhGi8Pho5opPySImLXtsqLiE0rLoXU5kC6ekJgCXl9VWcVHO7YFvL78dOH0rNoKIkoUaTubyqRBKZASWrwGg22DtIDp5EHHz7nsGmLK4VDeWVkcObo1lM5DxNTdEXGeQ+weJA4pRCqbzaST5cf1PW/kaWOPrxp7/NDiQBAAbVLvbNn43ratb3764e+umh3y+RSRnpFETFLITftaHUpe0uSdgKVAqzt2lWuPJWU+3WUPiDkYEAFRNMdjlX1Kr//aN2dNmlZ5XN8D3nXeyNMAIG1nfZZH1yZaPs3MwDc/+kBDtLk4FLbzm0PMDbNE0ZSI725qjPgD3B3pWUTM2PauxgYp9H6Dx0bMoV1yNB67btpF/zfjCl3LJmZiap9s1ku/+SxP+ymvikgK+bNFTy9ataK4uNWhFPqOGMCSVnM8um7ntmEV/Zm5i3tX63vfF23auHe3V3o63F6sOynwUFZHnfFU8r7v3PT7mdeVRYptUjqpZQmpS5f6sKRsmQzdqhi9gsrqrZt+8rcnQ+GetYsWIgDTio2fAnRDN4ZiZuY1n21piEU93dcDe0gKKQ4EQIBkOvXAd26afc6XtSws0dG+wF+wJQA2qduffDieTFhSck8SBxFZHu8La1enbVsK0cWnqZPoz6x+C4jyaRgFtGxQVIBDoIg2N/32qmtnTZqWVXbHsjgYRJRC3PH1y4M+fzabRcQC3ssBBxEFvf73Nq9/atVyRFRdyMgRkUBcv2fXEyteC/oDpFT+HtARX3QXkUJG49Fvn3PejeddlFXKcl5J2Ak9WWjySSN/cUV1IpXoaVusMbBleef8/RlFhHjkzkUxIeLdLzwbjcc8Vl5bLArzhSKCrVTQH/jf6VcCwBFvMK9317r+3AvOOP7ERCqZc0e3QkFEQX9gzeYN//nUo1LII0vnZ5Xtkdaz775d++riSLgozymcwrgViSKRiF09cWpVeT9F6ogfKrb2Vv3w4ktsO4O6ktFjDkUqHAzNef6phcte8Ugrq+zDujutjNVbN117/++klMCU5+svzE9NKfJ4vLOnnM8AXcwCSBQMfMmY8VX9KpOZdM+aOcYMAAGff9Z9c2uXveyRliLqzKiKmNuUceEv7mxMxL2eAuwhVwBxCMS0nRla0X/kgIHQ4UKwnQERiTjo9Z1VNTybzfS0Vdt0iiLkD8x+YN5df3tSD8uJWeml+Ns9b9ZroRIpIoHokdZTq968eM6djcl4oEATWAogDkTMZrMj+1cGvb6ON5rvJPorPmPICaBU55s08wYTI2DQ67vjiQcvnPPjlz98Tzea6+KiXnOMmHT9Vqtn3Y5t1y2Yd8U9cxqTyYDHpwpULSrALHsEANsePWQo6LnqXa4/aHmNHjwULIuI8n9Hh0TLtzhc9OLa1Ys/ePfiUWMuHzfpS1XDhpSWB726rRwV0Y76utVbNz/37lt/eeuN5lgsEg4DQMswuBD3VLDC29EpSvVobFJFwSAzL1qzatHqt0LB0MA+fYeW9WMARNjT1Lhl7576eBSIgoFgcVG+xyYHUzBxOO1TceQn7EnjWCd06FAUDAGgrdSmvXs+2bFdN/MIKX0eT1EwBABEVHBlQGEKb8wA2BCPde9ZG+IxIMI8FSy7hFIEAALAb3kCHq9+kZmZWf9VD6EAJXtmBine2bKBmTuxSmznTgjwzuYNYNsoAFSPVwcA6B5e5p4s5QLMeFPMXo/34107mpKJkmCo6wMWrbB3tmwEy6K8lSyPAQowNYGJvZZnx769b238FKCri3UyMwLubW56a8OnPo+P3LWza2GPggRxrDcomfvi810/l65LPbD0pb31+3weKz+z6Y8RCtMmqEiFgqEX3l35xvqPJg4b2b6P/LDQE9ibk4l7Fj/n8wda04gFuCNXUqDhHwMASCG//9B9iUwaj3RxEiISKG57/MGddXVej5fJyKI7KdB0SAAiCvgDb3+y7paH7hMojmB9tKyyLSkfWLrk9y8+Fw6GVVsDqTm66Shk97lSdlFx8X2Ln/NYcl71DdDSMHxoY0ZMepeu2qVLZv/h1+FQiCGv/XPHCAWet2IrVVRUMv/vz2Sz9q+uvjbs9xMRA4hcy7YyaPPCUkhA+N2Lz93y0B+DvgADmAHs0QCD1d8s9DWAJWVzU+O4Eaf89Fszzzv1dP2irlW2mQOB2NYTtG7Htp/+9fFHly4JR4qMMo4ePUIcAGBJGU0mmfmiM8b+2/lfnTBsRJ9w5ID3JNLptZ9trl265E9vvBpLJiKhSFcadw2HBIPVMwp9DS0IIYAhlowD4MC+ZcMHVI45/sTiYBARs8petWnDJ7u2b967285kAsGgJSyjjKMNBmf2FHFodECazmYz2QzoNnwAQAApLcvj83iFQOopi4O7nB40kVqjE1key/J5PO33WtNFS2JWvaSu5gJ6nDg0zKyMcSg0PWCWvaGnUvhZ9oYeSy9orTMUCiMOgyNu2wDQ0I0Yy2FwxIjD4IhxKwZHjOUwOGLEYXDEiMPgiIk5DI708j3eDEcT41YMjpjCm8ERU7I3OGLcisER41YMjhjLYXDExBwGR4zlMDhiYg6DI8atGBwxbsXgiHErBkeM5TA4YmIOgyPGrRgcMW7F4IgRh8ERE3MYHDExh8ER41YMjhhxGBwxUxMMjhjLYXDEiMPgyP8D3fWwzTB7FWkAAAAASUVORK5CYII=">
+<title>LinkTrip — 人脈旅程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFAF7; --surface:#FFFFFF; --ink:#1E2A38; --muted:#6B7280;
+    --line:#E8E4DC; --teal:#0E7C6B; --teal-soft:#E3F0ED;
+    --amber:#B9791A; --amber-soft:#F6ECD9; --danger:#B4453A;
+    --shadow:0 1px 2px rgba(30,42,56,.05),0 6px 20px rgba(30,42,56,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Noto Sans TC",-apple-system,system-ui,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    -webkit-font-smoothing:antialiased; padding-bottom:84px;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 16px}
+
+  /* Header */
+  header{padding:28px 0 14px;position:relative}
+  .brand{font-family:"Noto Serif TC",serif;font-weight:700;font-size:26px;letter-spacing:.5px}
+  .brand small{font-family:"Noto Sans TC";font-weight:400;font-size:13px;color:var(--muted);letter-spacing:0;display:block;margin-top:2px}
+  .gear{position:absolute;right:0;top:30px;width:38px;height:38px;border:1px solid var(--line);background:var(--surface);border-radius:10px;font-size:17px;cursor:pointer;color:var(--muted)}
+  .gear:active{transform:scale(.95)}
+
+  /* Tabs (bottom) */
+  nav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--line);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom)}
+  nav button{flex:1;border:none;background:none;padding:11px 0 13px;font-family:inherit;font-size:11px;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px}
+  nav button .ico{font-size:20px;line-height:1}
+  nav button.on{color:var(--teal);font-weight:700}
+  nav button .badge{position:absolute;transform:translate(14px,-4px);background:var(--amber);color:#fff;font-size:9px;font-weight:700;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px}
+
+  /* Search */
+  .search{display:flex;align-items:center;gap:9px;margin:4px 0 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+  .search:focus-within{border-color:var(--teal)}
+  .search .si{color:var(--muted);font-size:15px;flex-shrink:0}
+  .search input[type=text]{flex:1;min-width:0;border:none;border-radius:0;background:none;box-shadow:none;padding:12px 0;font-family:inherit;font-size:15px;color:var(--ink)}
+  .search input[type=text]:focus{outline:none;border:none}
+  .hint{font-size:12px;color:var(--muted);margin:-8px 2px 14px}
+
+  /* Cards */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:12px;position:relative}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .idblock{display:flex;align-items:center;gap:11px;min-width:0}
+  .avatar{width:46px;height:46px;border-radius:12px;object-fit:cover;flex-shrink:0;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;font-family:"Noto Serif TC",serif;font-weight:700;font-size:19px;color:var(--teal);overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .nm{font-family:"Noto Serif TC",serif;font-weight:700;font-size:18px;line-height:1.3}
+  .co{font-size:13px;color:var(--muted);margin-top:2px}
+  .minicard{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:10px;cursor:pointer;transition:transform .1s}
+  .minicard:active{transform:scale(.99)}
+  .minicard .mini-offer{font-size:12.5px;color:var(--teal);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .minicard .mini-need{font-size:12.5px;color:var(--amber);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .minicard .mini-arrow{color:var(--line);font-size:24px;flex-shrink:0;line-height:1}
+  .kv{display:flex;align-items:baseline;gap:9px;margin-top:9px;font-size:14px}
+  .kv .k{flex-shrink:0;font-size:11px;font-weight:700;padding:3px 9px;border-radius:7px;line-height:1.5;letter-spacing:.5px}
+  .kv.offer .k{color:var(--teal);background:var(--teal-soft)}
+  .kv.need .k{color:var(--amber);background:var(--amber-soft)}
+  .kv .v{color:var(--ink)}
+  .kv.need .v{color:#666}
+  .tags{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:11.5px;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:3px 10px;border-radius:7px}
+  .meta{margin-top:11px;padding-top:11px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+  .meta a{color:var(--teal);text-decoration:none}
+  .rowbtns{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+  .rowbtns button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px;font-family:inherit;font-size:13.5px;color:var(--muted);cursor:pointer;transition:transform .1s}
+  .rowbtns button:active{transform:scale(.97)}
+  .rowbtns .logbtn{flex:1;color:#fff;border-color:var(--teal);background:var(--teal);font-weight:700}
+  .rowbtns .editbtn{flex:1}
+
+  /* Wish card */
+  .wcard{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:12px}
+  .wcard .wtop{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .wwho{font-family:"Noto Serif TC",serif;font-weight:700;font-size:16px;line-height:1.4}
+  .wstat{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .wstat.open{color:var(--amber);background:var(--amber-soft)}
+  .wstat.done{color:var(--teal);background:var(--teal-soft)}
+  .wfield{margin-top:9px;font-size:13.5px}
+  .wfield b{color:var(--muted);font-weight:500;font-size:12px;display:block}
+  .wreward{margin-top:9px;font-size:13.5px;background:var(--amber-soft);border-radius:9px;padding:8px 11px;color:#8a5a12}
+  .wreward b{font-weight:700}
+  .matchbtn{width:100%;margin-top:13px;padding:12px;background:var(--teal);color:#fff;border:none;border-radius:11px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:transform .1s}
+  .matchbtn:active{transform:scale(.98)}
+  .help-flag{margin-top:11px;font-size:12.5px;font-weight:700;color:var(--teal);background:var(--teal-soft);border-radius:9px;padding:7px 11px}
+  .pform{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:4px 16px 20px}
+  .mid{display:inline-block;font-size:11px;font-weight:700;color:var(--muted);background:#F1EEE8;border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-right:8px;vertical-align:middle;font-family:ui-monospace,monospace}
+  .consent{display:flex;align-items:flex-start;gap:9px;margin:18px 0 4px;padding:12px;background:var(--amber-soft);border-radius:11px;font-size:13px;line-height:1.5;color:#7a5310;font-weight:400;cursor:pointer}
+  .consent input{width:20px;height:20px;flex-shrink:0;margin-top:1px;accent-color:var(--teal);cursor:pointer}
+  .privacy-note{margin:6px 0 4px;padding:12px;background:var(--teal-soft);border-radius:11px;font-size:12.5px;line-height:1.6;color:#0c5a4e}
+  .privacy-note b{font-weight:700}
+  .io-full{width:100%;padding:12px;border:1px solid var(--line);background:var(--surface);border-radius:11px;font-family:inherit;font-size:14px;cursor:pointer;color:var(--ink);text-align:left}
+  .terms{max-height:46vh;overflow-y:auto;border:1px solid var(--line);border-radius:11px;background:var(--surface);padding:14px 15px;margin-top:6px}
+  .terms p{font-size:13px;line-height:1.7;color:#444;margin-bottom:12px}
+  .terms p b{display:block;color:var(--ink);font-weight:700;margin-bottom:2px}
+  .terms .terms-note{font-size:12px;color:var(--muted);margin-bottom:0}
+
+  /* Empty */
+  .empty{text-align:center;padding:56px 24px;color:var(--muted)}
+  .empty .e-ico{font-size:42px;opacity:.5}
+  .empty h3{font-family:"Noto Serif TC",serif;font-size:18px;color:var(--ink);margin:14px 0 6px;font-weight:700}
+  .empty p{font-size:14px;max-width:300px;margin:0 auto}
+
+  /* Dashboard */
+  .stats{display:flex;gap:10px;margin-bottom:18px}
+  .stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:15px 12px;text-align:center;box-shadow:var(--shadow)}
+  .stat .num{font-family:"Noto Serif TC",serif;font-weight:700;font-size:28px;line-height:1}
+  .stat .lbl{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .stat.t .num{color:var(--teal)} .stat.a .num{color:var(--amber)}
+  .sect-h{font-family:"Noto Serif TC",serif;font-weight:700;font-size:16px;margin:20px 0 10px;display:flex;align-items:center;gap:7px}
+
+  /* FAB */
+  .fab{position:fixed;right:18px;bottom:90px;width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;border:none;font-size:28px;box-shadow:0 6px 18px rgba(14,124,107,.4);cursor:pointer;z-index:40;display:flex;align-items:center;justify-content:center}
+  .fab:active{transform:scale(.93)}
+
+  /* Modal */
+  .modal{position:fixed;inset:0;background:rgba(30,42,56,.45);z-index:100;display:none;align-items:flex-end;justify-content:center}
+  .modal.show{display:flex}
+  .sheet{background:var(--bg);width:100%;max-width:680px;max-height:92vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:8px 18px calc(28px + env(safe-area-inset-bottom));animation:up .25s ease}
+  @keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:translateY(0);opacity:1}}
+  .grab{width:38px;height:4px;background:var(--line);border-radius:3px;margin:8px auto 14px}
+  .sheet h2{font-family:"Noto Serif TC",serif;font-size:20px;margin-bottom:4px}
+  .sheet .sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+  label{display:block;font-size:13px;font-weight:500;margin:14px 0 5px;color:var(--ink)}
+  label .opt{color:var(--muted);font-weight:400;font-size:12px}
+  input[type=text],input[type=date],input[type=email],textarea,select{
+    width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--surface);font-family:inherit;font-size:15px;color:var(--ink)
+  }
+  textarea{resize:vertical;min-height:62px}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--teal)}
+  .save{width:100%;margin-top:24px;padding:15px;background:var(--teal);color:#fff;border:none;border-radius:13px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+  .save.amber{background:var(--amber)}
+  .save:active{opacity:.85}
+  .del{width:100%;margin-top:10px;padding:13px;background:none;color:var(--danger);border:1px solid var(--line);border-radius:13px;font-family:inherit;font-size:14px;cursor:pointer}
+  .del.danger-confirm{background:var(--danger);color:#fff;border-color:var(--danger);font-weight:700}
+  .closebtn{width:100%;margin-top:10px;padding:13px;background:none;color:var(--muted);border:1px solid var(--line);border-radius:13px;font-family:inherit;font-size:14px;cursor:pointer}
+  .d-head{display:flex;align-items:center;gap:14px;margin:6px 0 4px}
+  .d-avatar{width:64px;height:64px;border-radius:16px;flex-shrink:0;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;font-family:"Noto Serif TC",serif;font-weight:700;font-size:26px;color:var(--teal);overflow:hidden}
+  .d-avatar img{width:100%;height:100%;object-fit:cover}
+  .d-name{font-family:"Noto Serif TC",serif;font-weight:700;font-size:22px;line-height:1.25}
+  .d-sub{font-size:14px;color:var(--muted);margin-top:3px}
+  .d-row{margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}
+  .d-label{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:4px}
+  .d-val{font-size:15px;color:var(--ink);line-height:1.6;white-space:pre-wrap}
+  .d-val.teal{color:var(--teal);font-weight:500}
+  .d-val.amber{color:#9a6314;font-weight:500}
+  .send2{width:100%;margin-top:10px;padding:13px;background:var(--amber-soft);color:#8a5a12;border:1px solid var(--amber);border-radius:13px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+
+  .seg{display:flex;gap:8px;margin-top:6px}
+  .seg label{flex:1;margin:0}
+  .seg input{display:none}
+  .seg span{display:block;text-align:center;padding:10px;border:1px solid var(--line);border-radius:11px;background:var(--surface);font-size:14px;cursor:pointer}
+  .seg input:checked+span{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);font-weight:700}
+
+  .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 20px;border-radius:30px;font-size:14px;z-index:200;opacity:0;transition:opacity .25s;pointer-events:none}
+  .toast.show{opacity:1}
+  .io{display:flex;gap:10px;margin-top:8px}
+  .io button{flex:1;padding:11px;border:1px solid var(--line);background:var(--surface);border-radius:11px;font-family:inherit;font-size:13.5px;cursor:pointer;color:var(--ink)}
+  /* photo upload */
+  .photorow{display:flex;align-items:center;gap:14px;margin-top:6px}
+  .photo-prev{width:72px;height:72px;border-radius:16px;flex-shrink:0;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:300;color:var(--teal);overflow:hidden;border:1px dashed var(--teal);cursor:pointer;transition:transform .12s}
+  .photo-prev:active{transform:scale(.95)}
+  .photo-prev img{width:100%;height:100%;object-fit:cover}
+  .photo-btns{display:flex;flex-direction:column;gap:7px;flex:1}
+  .photo-btns button{padding:9px;border:1px solid var(--line);background:var(--surface);border-radius:10px;font-family:inherit;font-size:13px;cursor:pointer;color:var(--ink)}
+  .photo-btns button.rm{color:var(--danger)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">人脈旅程 LinkTrip<small>記住認識的人，需要時找得到</small></div>
+    <button class="gear" onclick="openSettings()">⚙</button>
+  </header>
+  <main id="view"></main>
+</div>
+
+<button class="fab" id="fab" onclick="add()">＋</button>
+
+<nav>
+  <button id="t-people" class="on" onclick="go('people')"><span class="ico">🗂️</span>人脈</button>
+  <button id="t-wish" onclick="go('wish')"><span class="ico">✦</span>許願</button>
+  <button id="t-match" onclick="go('match')"><span class="ico">🤝</span>媒合</button>
+  <button id="t-profile" onclick="go('profile')"><span class="ico">👤</span>個人</button>
+</nav>
+
+<!-- Contact modal -->
+<div class="modal" id="m-person">
+  <div class="sheet">
+    <div class="grab"></div>
+    <h2 id="p-title">新增人脈</h2>
+    <div class="sub">記下這個人能幫上什麼、你怎麼認識的</div>
+    <input type="hidden" id="p-id">
+    <input type="hidden" id="p-photo">
+    <label>照片 <span class="opt">選填,點下方圖框上傳,會自動縮小儲存</span></label>
+    <div class="photorow">
+      <div class="photo-prev" id="p-prev" onclick="document.getElementById('p-file').click()">＋</div>
+      <div class="photo-btns">
+        <button class="rm" id="p-rmphoto" onclick="clearPhoto()" style="display:none">移除照片</button>
+      </div>
+    </div>
+    <input type="file" id="p-file" accept="image/*" style="display:none" onchange="onPhoto(event)">
+    <label>姓名</label><input type="text" id="p-name" placeholder="王小明">
+    <label>公司 <span class="opt">選填</span></label><input type="text" id="p-co" placeholder="某某科技">
+    <label>職稱 <span class="opt">選填</span></label><input type="text" id="p-title2" placeholder="行銷總監">
+    <label>他能提供什麼 <span class="opt">最重要,需要時靠這個找人</span></label>
+    <textarea id="p-offer" placeholder="認識很多餐飲業老闆、懂進出口報關、可以介紹工廠"></textarea>
+    <label>他在找什麼 <span class="opt">選填,方便你幫他媒合</span></label>
+    <textarea id="p-need" placeholder="想找東南亞的食品通路"></textarea>
+    <label>標籤 <span class="opt">用逗號分隔</span></label><input type="text" id="p-tags" placeholder="餐飲, 採購, 高雄">
+    <label>怎麼認識的 <span class="opt">選填</span></label><input type="text" id="p-how" placeholder="2024 展會、朋友介紹">
+    <label>聯絡方式 <span class="opt">選填</span></label><input type="text" id="p-contact" placeholder="LINE / 電話 / Email">
+    <label>備註 <span class="opt">選填</span></label><textarea id="p-note" placeholder="小孩剛上小學、喜歡爬山…"></textarea>
+    <button class="save" onclick="savePerson()">儲存</button>
+    <button class="del" id="p-del" onclick="delPerson()" style="display:none">刪除這筆</button>
+  </div>
+</div>
+
+<!-- Contact detail (read-only) modal -->
+<div class="modal" id="m-detail">
+  <div class="sheet">
+    <div class="grab"></div>
+    <div id="detail-body"></div>
+    <button class="save" onclick="editFromDetail()">✎ 編輯</button>
+    <button class="closebtn" onclick="hide('m-detail')">關閉</button>
+  </div>
+</div>
+
+<!-- Wish modal -->
+<div class="modal" id="m-wish">
+  <div class="sheet">
+    <div class="grab"></div>
+    <h2 id="w-title">許一個人脈願望</h2>
+    <div class="sub">說清楚你想認識誰、為什麼、能回報什麼</div>
+    <div class="privacy-note">🔒 你的許願在媒合名單上是<b>匿名顯示</b>的——其他使用者只會看到「需求內容＋一個編號」,<b>不會知道是誰提出的</b>。你的身分與聯絡方式僅 LinkTrip 媒合團隊可見、不會公開,請安心許願。</div>
+    <input type="hidden" id="w-id">
+    <label>產業分類 <span class="opt">選填，幫助其他人快速找到你的需求</span></label>
+    <select id="w-industry">
+      <option value="">-- 請選擇 --</option>
+      <option value="餐飲">餐飲</option>
+      <option value="製造業">製造業</option>
+      <option value="科技">科技</option>
+      <option value="金融">金融</option>
+      <option value="貿易 / 跨境">貿易 / 跨境</option>
+      <option value="教育">教育</option>
+      <option value="醫療">醫療</option>
+      <option value="房地產">房地產</option>
+      <option value="物流">物流</option>
+      <option value="零售">零售</option>
+      <option value="食品">食品</option>
+      <option value="其他">其他</option>
+    </select>
+    <label>想認識什麼樣的人</label>
+    <textarea id="w-who" placeholder="台中連鎖餐飲的採購窗口 / 在馬來西亞有通路的食品代理"></textarea>
+    <label>用途 / 為什麼想找 <span class="opt">選填</span></label>
+    <textarea id="w-why" placeholder="想談我們的醬料進他們的中央廚房"></textarea>
+    <label>你能提供的回報 <span class="opt">賞金、請喝咖啡、互相介紹…</span></label>
+    <input type="text" id="w-reward" placeholder="成功媒合謝禮 NT$3,000">
+    <label class="consent"><input type="checkbox" id="w-agree"><span>我願意提供此需求與我的聯絡方式,供媒合團隊用於媒合用途。(送出前必須勾選)</span></label>
+    <button class="save amber" onclick="sendWish()">📧 送出給LinkTrip 媒合團隊</button>
+    <button class="del" id="w-del" onclick="delWish()" style="display:none">刪除這筆</button>
+  </div>
+</div>
+
+<!-- Settings modal -->
+<div class="modal" id="m-set">
+  <div class="sheet">
+    <div class="grab"></div>
+    <h2>設定</h2>
+    <div class="sub">資料只存在這支裝置,記得定期備份</div>
+    <label>LinkTrip 媒合團隊 Email <span class="opt">許願「送出」時會寄到這個信箱</span></label>
+    <input type="email" id="s-email" placeholder="you@example.com">
+    <button class="save" onclick="saveSettings()">儲存設定</button>
+    <label style="margin-top:24px">資料備份</label>
+    <div class="io">
+      <button onclick="exportData()">⬇ 匯出 JSON</button>
+      <button onclick="document.getElementById('imp').click()">⬆ 匯入 JSON</button>
+    </div>
+    <input type="file" id="imp" accept=".json" style="display:none" onchange="importData(event)">
+    <label style="margin-top:24px">法律</label>
+    <button class="io-full" onclick="show('m-terms')">📄 服務條款與免責聲明</button>
+  </div>
+</div>
+
+<!-- Terms modal -->
+<div class="modal" id="m-terms">
+  <div class="sheet">
+    <div class="grab"></div>
+    <h2>服務條款與免責聲明</h2>
+    <div class="sub">送出許願前請先閱讀並同意</div>
+    <div class="terms">
+      <p><b>1. 服務性質</b>人脈旅程(以下稱本服務)僅提供商務人脈「資訊與聯絡方式」的媒合與轉達,協助使用者表達需求、表示可促成媒合。本服務不參與、不介入、不擔保使用者之間後續的任何接觸、洽談、交易或合作。</p>
+      <p><b>2. 免責範圍</b>使用者之間因媒合而產生的任何聯繫、往來、交易、合作或爭議,均為使用者自行為之、自負風險。對於由此產生的任何損失、糾紛、詐騙、侵權或法律責任,本服務一概不負責。使用者應自行判斷往來對象,並自行承擔風險。</p>
+      <p><b>3. 資訊正確性</b>本服務不保證使用者所填寫、或彼此交換之任何資訊為真實、正確或完整。使用者應自行查證對方身分與資訊真偽。</p>
+      <p><b>4. 個人資料與同意</b>使用者提供需求與聯絡資訊,即同意本服務為「媒合目的」加以使用、整理與轉達。使用者於提供任何第三人(被引薦對象)之資料前,應確保已取得該第三人之同意;相關責任由使用者自行承擔,與本服務無關。本服務僅於媒合所需範圍內保存資料,使用者得隨時要求刪除。</p>
+      <p><b>5. 禁止行為</b>不得將本服務用於詐騙、騷擾、傳銷、散布不實資訊或任何違法用途。違反者,本服務得逕行移除其資料、終止其使用權限,並保留依法追究之權利。</p>
+      <p><b>6. 金錢往來</b>本服務目前不經手任何金錢。使用者之間任何報酬、賞金或費用往來,均為雙方私下行為,與本服務無關;本服務不負代收、保管、擔保或仲裁之責。</p>
+      <p><b>7. 服務提供</b>本服務為免費提供,不保證服務不中斷、無錯誤或永久提供,並得隨時新增、修改或停止全部或部分服務,恕不另行通知。</p>
+      <p><b>8. 使用資格</b>本服務限完全行為能力之成年人使用。未成年人應經法定代理人同意後始得使用。</p>
+      <p><b>9. 條款變更</b>本服務得隨時修改本條款,修改後於本服務內公告。使用者於修改後繼續使用,視為同意修改後之條款。</p>
+      <p><b>10. 準據法</b>本條款以中華民國法律為準據法。</p>
+      <p class="terms-note">附註:本條款為一般性聲明,不構成法律意見。</p>
+    </div>
+    <button class="save" onclick="agreeTerms()">我已閱讀並同意</button>
+    <button class="del" onclick="closeTerms()">關閉</button>
+  </div>
+</div>
+
+<!-- Send mail modal -->
+<div class="modal" id="m-send">
+  <div class="sheet">
+    <div class="grab"></div>
+    <h2 id="send-title">送出內容</h2>
+    <div class="sub">按「開啟郵件 App」會自動帶入;若沒有反應,改用「複製內容」貼到任一郵件/通訊軟體寄給媒合團隊即可。</div>
+    <label>收件人(LinkTrip 媒合團隊)</label>
+    <input type="text" id="send-to" readonly>
+    <label>內容</label>
+    <textarea id="send-body" readonly style="min-height:170px"></textarea>
+    <button class="save" onclick="doOpenMail()">📧 開啟郵件 App</button>
+    <button class="send2" onclick="copyMail()">📋 複製內容</button>
+    <button class="del" onclick="hide('m-send')">關閉</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DB={people:[],wishes:[],settings:{email:"linktrip.match@gmail.com"},profile:{name:"",company:"",title:"",expertise:"",industries:"",contact:""},claimedMatches:[],agreedTerms:false};
+const $=id=>document.getElementById(id);
+let TAB="people", SEARCH="", PEOPLE_TAG="";
+
+/* ---------- storage ---------- */
+function load(){
+  try{
+    const r=localStorage.getItem("renmaibox");
+    if(r){const d=JSON.parse(r);DB.people=d.people||[];DB.wishes=d.wishes||[];DB.settings=d.settings||{email:""};DB.profile=Object.assign({name:"",company:"",title:"",expertise:"",industries:"",contact:""},d.profile||{});DB.claimedMatches=d.claimedMatches||[];DB.agreedTerms=!!d.agreedTerms;}
+  }catch(e){}
+  if(!DB.settings.email)DB.settings.email="linktrip.match@gmail.com";
+}
+function save(){
+  try{localStorage.setItem("renmaibox",JSON.stringify(DB));}
+  catch(e){toast("儲存失敗：資料可能過大，請移除部分照片");}
+}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800);}
+
+/* ---------- date helpers ---------- */
+function today(){return new Date().toISOString().slice(0,10);}
+
+/* ---------- nav ---------- */
+function go(t){
+  TAB=t;
+  ["people","wish","match","profile"].forEach(x=>$("t-"+x).classList.toggle("on",x===t));
+  $("fab").style.display=(t==="people"||t==="wish")?"flex":"none";
+  render();
+}
+
+/* ---------- render ---------- */
+function render(){
+  if(TAB==="wish")renderWish();
+  else if(TAB==="match")renderMatch();
+  else if(TAB==="profile")renderProfile();
+  else renderPeople();
+  updateBadge();
+}
+function updateBadge(){
+  const open=DB.wishes.length;
+  const b=$("t-wish");
+  let badge=b.querySelector(".badge");
+  if(open>0){if(!badge){badge=document.createElement("span");badge.className="badge";b.appendChild(badge);}badge.textContent=open;}
+  else if(badge)badge.remove();
+}
+
+function renderPeople(){
+  const v=$("view");
+  let list=[...DB.people];
+  if(SEARCH){
+    const q=SEARCH.toLowerCase();
+    list=list.filter(p=>[p.name,p.co,p.title,p.offer,p.need,(p.tags||[]).join(" "),p.note].join(" ").toLowerCase().includes(q));
+  }
+  if(PEOPLE_TAG)list=list.filter(p=>(p.tags||[]).includes(PEOPLE_TAG));
+  list.sort((a,b)=>(b.created||0)-(a.created||0));
+
+  let html="";
+
+  // 完全沒有人脈、也沒在搜尋 → 只顯示統計與空狀態
+  if(DB.people.length===0 && !SEARCH){
+    html+=`<div class="stats">
+      <div class="stat t"><div class="num">0</div><div class="lbl">人脈</div></div>
+      <div class="stat a"><div class="num">${DB.wishes.length}</div><div class="lbl">許願中</div></div>
+      <div class="stat"><div class="num">${SERVICE_MATCHED==null?"—":SERVICE_MATCHED}</div><div class="lbl">系統媒合總數</div></div>
+    </div>`;
+    html+=`<div class="empty"><div class="e-ico">🗂️</div><h3>還沒有任何人脈</h3><p>按右下角的＋,記下第一個人。重點記「他能幫你什麼」,未來搜尋時就找得到。</p></div>`;
+    v.innerHTML=html;
+    return;
+  }
+
+  // 統計
+  html+=`<div class="stats">
+    <div class="stat t"><div class="num">${DB.people.length}</div><div class="lbl">人脈</div></div>
+    <div class="stat a"><div class="num">${DB.wishes.length}</div><div class="lbl">許願中</div></div>
+    <div class="stat"><div class="num">${SERVICE_MATCHED==null?"—":SERVICE_MATCHED}</div><div class="lbl">系統媒合總數</div></div>
+  </div>`;
+
+  // 我的人脈 標題 → 搜尋框(固定在標題下方)
+  html+=`<div class="sect-h">🗂️ 我的人脈</div>`;
+  html+=`<div class="search"><span class="si">🔍</span><input type="text" id="sb" placeholder="搜尋姓名、公司、能提供什麼…" value="${esc(SEARCH)}"></div>`;
+  // 標籤篩選
+  const allTags=[...new Set(DB.people.flatMap(p=>p.tags||[]))].slice(0,12);
+  if(allTags.length>1){
+    html+=`<div class="tags" style="margin:-4px 0 14px">
+      <span class="tag" style="cursor:pointer;${PEOPLE_TAG===''?'background:var(--teal);color:#fff;border-color:var(--teal)':''}" onclick="setPeopleTag('')">全部</span>
+      ${allTags.map(t=>`<span class="tag" style="cursor:pointer;${PEOPLE_TAG===t?'background:var(--teal);color:#fff;border-color:var(--teal)':''}" onclick="setPeopleTag('${esc(t)}')">${esc(t)}</span>`).join("")}
+    </div>`;
+  }
+  if(SEARCH||PEOPLE_TAG)html+=`<div class="hint">找到 ${list.length} 筆</div>`;
+
+  if(list.length===0){
+    html+=`<div class="empty"><div class="e-ico">🔍</div><h3>沒有符合的人</h3><p>換個關鍵字,或新增一筆人脈</p></div>`;
+  }else{
+    list.forEach(p=>{
+      html+=`<div class="minicard" onclick="viewPerson('${p.id}')">${avatarHTML(p)}
+        <div style="min-width:0;flex:1">
+          <div class="nm" style="font-size:16px">${esc(p.name)}</div>
+          ${(p.co||p.title)?`<div class="co">${esc([p.title,p.co].filter(Boolean).join(' · '))}</div>`:""}
+          ${p.offer?`<div class="mini-offer">能提供：${esc(p.offer)}</div>`:""}
+          ${p.need?`<div class="mini-need">在找：${esc(p.need)}</div>`:""}
+        </div>
+        <span class="mini-arrow">›</span>
+      </div>`;
+    });
+  }
+  v.innerHTML=html;
+  const sb=$("sb");
+  if(sb){sb.oninput=e=>{SEARCH=e.target.value;const pos=sb.selectionStart;renderPeople();const n=$("sb");n.focus();n.setSelectionRange(pos,pos);};}
+}
+
+function renderWish(){
+  const v=$("view");
+  let html=`<div class="hint" style="margin:6px 2px 16px">許願是你「想認識但還不認識」的人。前期由媒合團隊手動幫你找,送出後會寄信通知。</div>`;
+  const list=[...DB.wishes].sort((a,b)=>(b.created||0)-(a.created||0));
+  if(list.length===0){
+    html+=`<div class="empty"><div class="e-ico">✦</div><h3>還沒有許願</h3><p>按右下角的＋,寫下你想認識的人。說清楚對象、用途、能回報什麼。</p></div>`;
+  }else{
+    list.forEach(w=>{
+      html+=`<div class="wcard">
+        <div class="wtop">
+          <div class="wwho">${esc(w.who)}</div>
+          ${w.industry?`<span class="wstat open">${esc(w.industry)}</span>`:""}
+        </div>
+        ${w.why?`<div class="wfield"><b>用途</b>${esc(w.why)}</div>`:""}
+        ${w.reward?`<div class="wreward"><b>回報</b>　${esc(w.reward)}</div>`:""}
+        ${w.sent?`<div class="help-flag">📧 已送出給 LinkTrip 媒合團隊</div>`:`<div style="font-size:12.5px;color:var(--muted);margin-top:8px">⚠ 尚未送出給媒合團隊</div>`}
+        <div class="rowbtns">
+          <button onclick="editWish('${w.id}')">編輯</button>
+        </div>
+      </div>`;
+    });
+  }
+  v.innerHTML=html;
+}
+
+function esc(s){return (s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+/* ---------- 媒合頁(讀取共用 matches.json) ---------- */
+let MATCH_ITEMS=null, MATCH_UPDATED="", SERVICE_MATCHED=null;
+const MATCH_HINT=`<div class="hint" style="margin:6px 2px 16px">這裡是彙整後的媒合需求。看到你能幫上忙的,點「我可以促成」,會寄信給媒合團隊,由媒合團隊居中聯繫雙方。</div>`;
+
+function renderMatch(){
+  const v=$("view");
+  if(MATCH_ITEMS!==null){drawMatches();return;}
+  v.innerHTML=MATCH_HINT+`<div class="empty"><div class="e-ico">⏳</div><h3>載入媒合名單中…</h3></div>`;
+  fetchMatchData(()=>{if(TAB==="match")drawMatches();},()=>{
+    if(TAB!=="match")return;
+    v.innerHTML=MATCH_HINT+`<div class="empty"><div class="e-ico">📡</div><h3>目前無法載入媒合名單</h3><p>請確認已連網,且 matches.json 已和 App 放在同一個資料夾一起部署。本機直接開檔(file://)也會無法載入,屬正常。</p></div>`;
+  });
+}
+
+function fetchMatchData(onOk,onErr){
+  fetch("matches.json?t="+Date.now(),{cache:"no-store"})
+    .then(r=>{if(!r.ok)throw 0;return r.json();})
+    .then(data=>{
+      MATCH_ITEMS=data.items||[];MATCH_UPDATED=data.updated||"";
+      if(typeof data.matchedCount==="number")SERVICE_MATCHED=data.matchedCount;
+      if(onOk)onOk();
+    })
+    .catch(()=>{if(onErr)onErr();});
+}
+
+// 啟動時抓一次服務統計(供「已媒合」數字顯示),失敗就維持顯示 —
+function loadServiceStats(){
+  fetchMatchData(()=>{if(TAB==="people")renderPeople();},null);
+}
+
+let MATCH_FILTER="", MATCH_SEARCH="";
+function drawMatches(){
+  const v=$("view");
+  let html=MATCH_HINT;
+  html+=`<div style="display:flex;justify-content:flex-end;margin:-4px 0 10px"><button onclick="refreshMatch()" style="font-size:12.5px;color:var(--teal);background:none;border:1px solid var(--teal);border-radius:8px;padding:5px 12px;cursor:pointer;">↻ 重新整理</button></div>`;
+  if(MATCH_UPDATED)html+=`<div class="hint" style="margin:-8px 2px 14px">名單更新日期：${esc(MATCH_UPDATED)}</div>`;
+  const items=MATCH_ITEMS||[];
+  // 產業篩選標籤
+  const industries=[...new Set(items.map(it=>it.industry).filter(Boolean))];
+  if(industries.length>1){
+    html+=`<div class="tags" style="margin-bottom:14px">
+      <span class="tag" style="cursor:pointer;${MATCH_FILTER===''?'background:var(--teal);color:#fff;border-color:var(--teal)':''}" onclick="setMatchFilter('')">全部</span>
+      ${industries.map(ind=>`<span class="tag" style="cursor:pointer;${MATCH_FILTER===ind?'background:var(--teal);color:#fff;border-color:var(--teal)':''}" onclick="setMatchFilter('${esc(ind)}')">${esc(ind)}</span>`).join("")}
+    </div>`;
+  }
+  // 搜尋框
+  html+=`<div class="search" style="margin-bottom:14px"><span class="si">🔍</span><input type="text" id="msb" placeholder="搜尋需求關鍵字…" value="${esc(MATCH_SEARCH)}"></div>`;
+  // 過濾
+  let filtered=items;
+  if(MATCH_FILTER)filtered=filtered.filter(it=>it.industry===MATCH_FILTER);
+  if(MATCH_SEARCH){
+    const q=MATCH_SEARCH.toLowerCase();
+    filtered=filtered.filter(it=>[it.who,it.why,it.industry,it.reward].join(" ").toLowerCase().includes(q));
+  }
+  if(filtered.length===0){
+    html+=`<div class="empty"><div class="e-ico">🤝</div><h3>${items.length===0?"目前沒有待媒合的需求":"沒有符合的需求"}</h3><p>${items.length===0?"之後彙整的需求會出現在這裡讓人認領。":"換個關鍵字或取消篩選試試。"}</p></div>`;
+  }else{
+    filtered.forEach(it=>{
+      const claimed=DB.claimedMatches.includes(it.id);
+      // 比對本地人脈
+      const kw=(it.who+" "+(it.industry||"")).toLowerCase();
+      const hints=DB.people.filter(pe=>{
+        const txt=[pe.offer,pe.need,(pe.tags||[]).join(" ")].join(" ").toLowerCase();
+        return kw.split(/\s+/).some(w=>w.length>1&&txt.includes(w));
+      }).slice(0,2);
+      html+=`<div class="wcard">
+        <div class="wtop">
+          <div class="wwho"><span class="mid">${esc(it.id||"")}</span>${esc(it.who||"")}</div>
+          ${it.industry?`<span class="wstat open">${esc(it.industry)}</span>`:""}
+        </div>
+        ${it.why?`<div class="wfield"><b>用途</b>${esc(it.why)}</div>`:""}
+        ${it.reward?`<div class="wreward"><b>回報</b>　${esc(it.reward)}</div>`:""}
+        ${hints.length?`<div class="help-flag" style="background:var(--amber-soft);color:#7a5310">💡 你可能認識：${hints.map(pe=>esc(pe.name)+(pe.co?" ("+esc(pe.co)+")":"")).join("、")}</div>`:""}
+        ${claimed
+          ?`<div style="display:flex;gap:8px;margin-top:12px"><div class="help-flag" style="flex:1;margin:0">✓ 已表示可促成</div><button onclick="unclaimMatch('${esc(it.id||"")}')\" style="padding:7px 12px;border:1px solid var(--line);border-radius:9px;background:none;font-size:12px;cursor:pointer;color:var(--muted)">取消</button></div>`
+          :`<button class="matchbtn" data-id="${esc(it.id||"")}" data-who="${esc(it.who||"")}" data-industry="${esc(it.industry||"")}" onclick="helpMatchBtn(this)">🙋 我可以促成這個媒合</button>`
+        }
+      </div>`;
+    });
+  }
+  v.innerHTML=html;
+  const msb=$("msb");
+  if(msb){msb.oninput=e=>{MATCH_SEARCH=e.target.value;const pos=msb.selectionStart;drawMatches();const n=$("msb");if(n){n.focus();n.setSelectionRange(pos,pos);}};}
+}
+function setMatchFilter(f){MATCH_FILTER=f;drawMatches();}
+function refreshMatch(){MATCH_ITEMS=null;MATCH_FILTER="";MATCH_SEARCH="";renderMatch();}
+function setPeopleTag(t){PEOPLE_TAG=t;renderPeople();}
+
+function helpMatchBtn(btn){helpMatch(btn.dataset.id,btn.dataset.who,btn.dataset.industry||"");}
+function helpMatch(id,who,industry){
+  if(!confirm("確認前提：你是否已聯繫「想引薦的對象」,並取得他同意被介紹?\n\n按「確定」代表已取得同意,將寄信給媒合團隊;按「取消」則先去徵得同意再回來。"))return;
+  const to=DB.settings.email||"";
+  const subj="【可促成媒合】"+id;
+  const p=DB.profile;
+  const myContact=p.contact||p.name?"[我的稱呼] "+(p.name||"")+"\n[聯絡方式] "+(p.contact||"（請補充）"):"（請填寫你的稱呼與聯絡方式）";
+  // 搜尋本地人脈中符合的人
+  const kw=(who+" "+industry).toLowerCase();
+  const matched=DB.people.filter(pe=>{
+    const txt=[pe.offer,pe.need,(pe.tags||[]).join(" "),pe.co,pe.note].join(" ").toLowerCase();
+    return kw.split(/\s+/).some(w=>w.length>1&&txt.includes(w));
+  }).slice(0,3);
+  const matchedHint=matched.length?"\n\n【你的人脈中可能符合的人】\n"+matched.map(pe=>`- ${pe.name}${pe.co?" ("+pe.co+")":""}: ${pe.offer||""}`).join("\n"):"";
+  const body=
+`我想促成這筆媒合：
+
+編號：${id}
+對象：${who}
+
+我可以介紹的人 / 我的關係：
+（請說明你認識誰、能怎麼幫）${matchedHint}
+
+${myContact}
+
+[✓] 我已聯繫並取得「想引薦對象」同意被介紹
+— 由「LinkTrip 人脈旅程」送出`;
+  if(!DB.claimedMatches.includes(id)){DB.claimedMatches.push(id);save();}
+  drawMatches();
+  openMail(to,subj,body,"回報可促成媒合");
+}
+function unclaimMatch(id){
+  DB.claimedMatches=DB.claimedMatches.filter(x=>x!==id);save();drawMatches();toast("已取消");
+}
+
+/* ---------- 個人頁 ---------- */
+function renderProfile(){
+  const v=$("view");
+  const p=DB.profile;
+  v.innerHTML=`
+    <div class="hint" style="margin:6px 2px 16px">填寫你的商務名片資料。「可媒合的產業」是指你願意幫忙引薦、或人脈較廣的領域。</div>
+    <div class="pform">
+      <label>姓名</label><input type="text" id="pf-name" value="${esc(p.name)}" placeholder="你的名字">
+      <label>公司 <span class="opt">選填</span></label><input type="text" id="pf-co" value="${esc(p.company)}" placeholder="目前任職公司">
+      <label>職稱 <span class="opt">選填</span></label><input type="text" id="pf-title" value="${esc(p.title)}" placeholder="例如：業務經理">
+      <label>專長領域</label><textarea id="pf-expertise" placeholder="例如：航空地勤、物流調度、客服流程設計">${esc(p.expertise)}</textarea>
+      <label>可媒合的產業 <span class="opt">你人脈較廣、願意引薦的領域</span></label><textarea id="pf-industries" placeholder="例如：航空、旅遊 B2B、餐飲供應鏈">${esc(p.industries)}</textarea>
+      <label>聯絡方式 <span class="opt">選填</span></label><input type="text" id="pf-contact" value="${esc(p.contact)}" placeholder="LINE / 電話 / Email">
+      <button class="save" onclick="saveProfile()">儲存個人資料</button>
+    </div>`;
+}
+function saveProfile(){
+  DB.profile={
+    name:$("pf-name").value.trim(),
+    company:$("pf-co").value.trim(),
+    title:$("pf-title").value.trim(),
+    expertise:$("pf-expertise").value.trim(),
+    industries:$("pf-industries").value.trim(),
+    contact:$("pf-contact").value.trim()
+  };
+  save();toast("已儲存個人資料");
+}
+
+/* ---------- photo ---------- */
+function avatarHTML(p){
+  if(p.photo)return `<div class="avatar"><img src="${p.photo}" alt=""></div>`;
+  const ch=(p.name||"?").trim().charAt(0);
+  return `<div class="avatar">${esc(ch)}</div>`;
+}
+function setPhotoPreview(data){
+  const prev=$("p-prev"),rm=$("p-rmphoto");
+  if(data){prev.innerHTML=`<img src="${data}" alt="">`;prev.style.borderStyle="solid";prev.style.borderColor="var(--line)";rm.style.display="block";}
+  else{prev.textContent="＋";prev.style.borderStyle="dashed";prev.style.borderColor="var(--teal)";rm.style.display="none";}
+}
+function clearPhoto(){$("p-photo").value="";setPhotoPreview("");}
+function onPhoto(e){
+  const f=e.target.files[0];if(!f)return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    const img=new Image();
+    img.onload=()=>{
+      const max=320;
+      let{width:w,height:h}=img;
+      if(w>h&&w>max){h=h*max/w;w=max;}
+      else if(h>max){w=w*max/h;h=max;}
+      const cv=document.createElement("canvas");cv.width=w;cv.height=h;
+      cv.getContext("2d").drawImage(img,0,0,w,h);
+      const data=cv.toDataURL("image/jpeg",0.72);
+      $("p-photo").value=data;setPhotoPreview(data);
+    };
+    img.src=reader.result;
+  };
+  reader.readAsDataURL(f);
+  e.target.value="";
+}
+
+/* ---------- person actions ---------- */
+let VIEW_ID="";
+function viewPerson(id){
+  const p=DB.people.find(x=>x.id===id);if(!p)return;
+  VIEW_ID=id;
+  const av=p.photo?`<div class="d-avatar"><img src="${p.photo}" alt=""></div>`:`<div class="d-avatar">${esc((p.name||"?").trim().charAt(0))}</div>`;
+  let h=`<div class="d-head">${av}<div style="min-width:0"><div class="d-name">${esc(p.name)}</div>${(p.co||p.title)?`<div class="d-sub">${esc([p.title,p.co].filter(Boolean).join(' · '))}</div>`:""}</div></div>`;
+  const row=(label,val,cls)=>val?`<div class="d-row"><div class="d-label">${label}</div><div class="d-val ${cls||''}">${esc(val)}</div></div>`:"";
+  h+=row("能提供",p.offer,"teal");
+  h+=row("在找",p.need,"amber");
+  if(p.tags&&p.tags.length)h+=`<div class="d-row"><div class="d-label">標籤</div><div class="tags" style="margin-top:0">${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div>`;
+  h+=row("怎麼認識",p.how);
+  h+=row("聯絡方式",p.contact);
+  h+=row("備註",p.note);
+  $("detail-body").innerHTML=h;
+  show("m-detail");
+}
+function editFromDetail(){hide("m-detail");if(VIEW_ID)editPerson(VIEW_ID);}
+function add(){TAB==="wish"?addWish():addPerson();}
+function addPerson(){
+  $("p-id").value="";$("p-title").textContent="新增人脈";$("p-del").style.display="none";
+  ["p-name","p-co","p-title2","p-offer","p-need","p-tags","p-how","p-contact","p-note"].forEach(i=>$(i).value="");
+  $("p-photo").value="";setPhotoPreview("");
+  show("m-person");
+}
+function editPerson(id){
+  const p=DB.people.find(x=>x.id===id);if(!p)return;
+  $("p-id").value=p.id;$("p-title").textContent="編輯人脈";$("p-del").style.display="block";
+  $("p-del").dataset.confirm="";$("p-del").textContent="刪除這筆";$("p-del").classList.remove("danger-confirm");
+  $("p-name").value=p.name||"";$("p-co").value=p.co||"";$("p-title2").value=p.title||"";
+  $("p-offer").value=p.offer||"";$("p-need").value=p.need||"";$("p-tags").value=(p.tags||[]).join(", ");
+  $("p-how").value=p.how||"";$("p-contact").value=p.contact||"";$("p-note").value=p.note||"";
+  $("p-photo").value=p.photo||"";setPhotoPreview(p.photo||"");
+  show("m-person");
+}
+function savePerson(){
+  const name=$("p-name").value.trim();
+  if(!name){toast("請填姓名");return;}
+  const id=$("p-id").value;
+  const data={
+    name, co:$("p-co").value.trim(), title:$("p-title2").value.trim(),
+    offer:$("p-offer").value.trim(), need:$("p-need").value.trim(),
+    tags:$("p-tags").value.split(",").map(t=>t.trim()).filter(Boolean),
+    how:$("p-how").value.trim(), contact:$("p-contact").value.trim(),
+    note:$("p-note").value.trim(), photo:$("p-photo").value
+  };
+  if(id){Object.assign(DB.people.find(x=>x.id===id),data);}
+  else{data.id=uid();data.created=Date.now();DB.people.push(data);}
+  save();hide("m-person");render();toast("已儲存");
+}
+function delPerson(){
+  const id=$("p-id").value;if(!id)return;
+  const btn=$("p-del");
+  if(btn.dataset.confirm==="1"){
+    DB.people=DB.people.filter(x=>x.id!==id);save();hide("m-person");render();toast("已刪除");return;
+  }
+  btn.dataset.confirm="1";btn.classList.add("danger-confirm");
+  let sec=4;
+  btn.textContent=`⚠ 再按一次確認刪除（${sec}）`;
+  const iv=setInterval(()=>{sec--;const b=$("p-del");if(!b||sec<=0){clearInterval(iv);if(b){b.dataset.confirm="";b.textContent="刪除這筆";b.classList.remove("danger-confirm");}}else{b.textContent=`⚠ 再按一次確認刪除（${sec}）`;}},1000);
+}
+
+/* ---------- wish actions ---------- */
+function addWish(){
+  $("w-id").value="";$("w-title").textContent="許一個人脈願望";$("w-del").style.display="none";
+  $("w-who").value="";$("w-why").value="";$("w-reward").value="";$("w-industry").value="";$("w-agree").checked=false;
+  show("m-wish");
+}
+function editWish(id){
+  const w=DB.wishes.find(x=>x.id===id);if(!w)return;
+  $("w-id").value=w.id;$("w-title").textContent="編輯許願";$("w-del").style.display="block";
+  $("w-del").dataset.confirm="";$("w-del").textContent="刪除這筆";$("w-del").classList.remove("danger-confirm");
+  $("w-who").value=w.who||"";$("w-why").value=w.why||"";$("w-reward").value=w.reward||"";$("w-industry").value=w.industry||"";$("w-agree").checked=!!w.agree;
+  show("m-wish");
+}
+function readWishForm(){
+  return{
+    who:$("w-who").value.trim(),why:$("w-why").value.trim(),reward:$("w-reward").value.trim(),
+    industry:$("w-industry").value,agree:$("w-agree").checked
+  };
+}
+function saveWish(){
+  const d=readWishForm();
+  if(!d.who){toast("請填想認識的人");return;}
+  const id=$("w-id").value;
+  if(id){Object.assign(DB.wishes.find(x=>x.id===id),d);}
+  else{d.id=uid();d.created=Date.now();DB.wishes.push(d);}
+  save();hide("m-wish");render();toast("已儲存許願");
+}
+function delWish(){
+  const id=$("w-id").value;if(!id)return;
+  const btn=$("w-del");
+  if(btn.dataset.confirm==="1"){
+    DB.wishes=DB.wishes.filter(x=>x.id!==id);save();hide("m-wish");render();toast("已刪除");return;
+  }
+  btn.dataset.confirm="1";btn.classList.add("danger-confirm");
+  let sec=4;
+  btn.textContent=`⚠ 再按一次確認刪除（${sec}）`;
+  const iv=setInterval(()=>{sec--;const b=$("w-del");if(!b||sec<=0){clearInterval(iv);if(b){b.dataset.confirm="";b.textContent="刪除這筆";b.classList.remove("danger-confirm");}}else{b.textContent=`⚠ 再按一次確認刪除（${sec}）`;}},1000);
+}
+function sendWish(){
+  const d=readWishForm();
+  if(!d.who){toast("請先填想認識的人");return;}
+  if(!d.agree){toast("送出前請先勾選同意提供資料供媒合");return;}
+  if(!DB.agreedTerms){PENDING_SEND=true;show("m-terms");return;}
+  const to=DB.settings.email||"";
+  const subj="【人脈許願】"+(d.industry?"["+d.industry+"] ":"")+d.who.slice(0,30);
+  const dateStr=new Date().toISOString().slice(0,10).replace(/-/g,"");
+  const autoId=dateStr+"-"+String(Math.floor(Math.random()*900000)+100000);
+  const jsonSnippet=`{
+      "id": "${autoId}",
+      "who": "${(d.who||"").replace(/"/g,"'")}",
+      "why": "${(d.why||"").replace(/"/g,"'")}",
+      "reward": "${(d.reward||"").replace(/"/g,"'")}",
+      "industry": "${d.industry||""}"
+    }`;
+  const body=
+`想認識的人：
+${d.who}
+
+產業分類：
+${d.industry||"（未填）"}
+
+用途／為什麼：
+${d.why||"（未填）"}
+
+能提供的回報：
+${d.reward||"（未填）"}
+
+[✓] 許願者已同意提供此需求與聯絡方式供媒合使用
+— 由「LinkTrip 人脈旅程」送出
+
+════════════════════════════
+📋 下列格式內容勿動
+════════════════════════════
+${jsonSnippet}
+════════════════════════════`;
+  // 先存起來
+  const id=$("w-id").value;
+  if(id){const w=DB.wishes.find(x=>x.id===id);Object.assign(w,d);w.sent=true;}
+  else{d.id=uid();d.created=Date.now();d.sent=true;DB.wishes.push(d);$("w-id").value=d.id;}
+  save();render();
+  hide("m-wish");
+  openMail(to,subj,body,"送出許願給LinkTrip 媒合團隊");
+}
+
+/* ---------- settings / backup ---------- */
+function openSettings(){$("s-email").value=DB.settings.email||"";show("m-set");}
+function saveSettings(){
+  const em=$("s-email").value.trim();
+  if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){toast("Email 格式不正確");return;}
+  DB.settings.email=em;save();hide("m-set");toast("已儲存設定");
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(DB,null,2)],{type:"application/json"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="人脈旅程備份_"+today()+".json";a.click();toast("已匯出備份");
+}
+function importData(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const d=JSON.parse(r.result);
+      if(!confirm("匯入會覆蓋目前所有資料,確定?"))return;
+      DB.people=d.people||[];DB.wishes=d.wishes||[];DB.settings=d.settings||{email:""};DB.profile=Object.assign({name:"",company:"",title:"",expertise:"",industries:"",contact:""},d.profile||{});DB.claimedMatches=d.claimedMatches||[];DB.agreedTerms=!!d.agreedTerms;
+      save();render();hide("m-set");toast("已匯入");
+    }catch(err){toast("檔案格式錯誤");}
+  };
+  r.readAsText(f);
+  e.target.value="";
+}
+
+/* ---------- 寄信視窗 ---------- */
+let MAIL_TO="",MAIL_SUBJ="",MAIL_BODY="";
+function openMail(to,subj,body,title){
+  MAIL_TO=to;MAIL_SUBJ=subj;MAIL_BODY=body;
+  $("send-title").textContent=title||"送出內容";
+  $("send-to").value=to||"(尚未設定媒合團隊 Email,請到 ⚙ 設定填,或自行填入)";
+  $("send-body").value="主旨："+subj+"\n\n"+body;
+  show("m-send");
+}
+function doOpenMail(){
+  const a=document.createElement("a");
+  a.href=`mailto:${encodeURIComponent(MAIL_TO)}?subject=${encodeURIComponent(MAIL_SUBJ)}&body=${encodeURIComponent(MAIL_BODY)}`;
+  document.body.appendChild(a);a.click();a.remove();
+}
+function copyMail(){
+  const text="收件人："+(MAIL_TO||"(請填媒合團隊 Email)")+"\n主旨："+MAIL_SUBJ+"\n\n"+MAIL_BODY;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>toast("已複製,可貼到郵件 App")).catch(()=>fallbackCopy(text));
+  }else fallbackCopy(text);
+}
+function fallbackCopy(text){
+  const ta=$("send-body");ta.focus();ta.select();
+  let ok=false;try{ok=document.execCommand("copy");}catch(e){}
+  ta.setSelectionRange(0,0);ta.blur();
+  toast(ok?"已複製,可貼到郵件 App":"請長按上方內容手動複製");
+}
+
+/* ---------- 服務條款 ---------- */
+let PENDING_SEND=false;
+function agreeTerms(){
+  DB.agreedTerms=true;save();hide("m-terms");
+  if(PENDING_SEND){PENDING_SEND=false;sendWish();}
+  else toast("已同意服務條款");
+}
+function closeTerms(){
+  hide("m-terms");
+  if(PENDING_SEND){PENDING_SEND=false;toast("未同意條款,尚未送出");}
+}
+
+/* ---------- modal helpers ---------- */
+function show(id){$(id).classList.add("show");document.body.style.overflow="hidden";}
+function hide(id){$(id).classList.remove("show");document.body.style.overflow="";}
+document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m){m.classList.remove("show");document.body.style.overflow="";if(m.id==="m-terms"&&PENDING_SEND){PENDING_SEND=false;toast("未同意條款,尚未送出");}}}));
+
+/* ---------- init ---------- */
+load();render();loadServiceStats();
+
+</script>
+</body>
+</html>
